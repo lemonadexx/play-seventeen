@@ -542,7 +542,7 @@ hr {
     padding: 0 20px; }
 
   h1.title {
-    font-size: 19px;
+    font-size: 22px;
     margin-top: 15px; }
 
   .container {
@@ -582,7 +582,7 @@ hr {
     -ms-user-select: none;
     -ms-touch-action: none;
     touch-action: none;
-    background: #bbada0;
+    background: #627290;
     border-radius: 6px;
     width: 280px;
     height: 280px;
