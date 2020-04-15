@@ -183,7 +183,7 @@ hr {
       margin-top: 59px; }
     .game-container .game-message a {
       display: inline-block;
-      background: #8f7a66;
+      background: #627290;
       border-radius: 3px;
       padding: 0 20px;
       text-decoration: none;
@@ -195,7 +195,7 @@ hr {
         display: none; }
     .game-container .game-message.game-won {
       background: rgba(237, 194, 46, 0.5);
-      color: #f9f6f2; }
+      color: #f6cac9 }
       .game-container .game-message.game-won a.keep-playing-button {
         display: inline-block; }
     .game-container .game-message.game-won, .game-container .game-message.game-over {
@@ -757,7 +757,8 @@ hr {
     font-size: 30px !important;
     height: 30px !important;
     line-height: 30px !important;
-    margin-top: 90px !important; }
+    margin-top: 90px !important;
+    color: #627290; }
   .game-message .lower {
     margin-top: 30px !important; } }
 
