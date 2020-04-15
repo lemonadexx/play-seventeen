@@ -62,8 +62,6 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.classList.add("bg-display");
-  // test
   inner.textContent = tile.value;
 
   if (tile.previousPosition) {
