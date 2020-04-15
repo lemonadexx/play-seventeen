@@ -749,6 +749,10 @@ hr {
   .tile .tile-inner {
     font-size: 35px; }
 
+  .bg-display {
+    background-color: green !important;
+  }
+
   .game-message p {
     font-size: 30px !important;
     height: 30px !important;
@@ -756,3 +760,5 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+
+
