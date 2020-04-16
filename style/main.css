@@ -17,6 +17,8 @@ body {
 
 h1.title {
   font-size: 60px;
+  line-height: 52px;
+  letter-spacing: 9px;
   font-weight: bold;
   margin: 0;
   display: block;
@@ -138,7 +140,7 @@ hr {
   100% {
     opacity: 1; } }
 .game-container {
-  margin-top: 40px;
+  margin-top: 15px;
   position: relative;
   padding: 15px;
   cursor: default;
@@ -149,7 +151,7 @@ hr {
   -ms-user-select: none;
   -ms-touch-action: none;
   touch-action: none;
-  background: #bbada0;
+  background: #626d84;
   border-radius: 6px;
   width: 500px;
   height: 500px;
@@ -530,6 +532,25 @@ hr {
   text-align: center;
   float: right; }
 
+.game-notice {
+  background: #DDB133;
+  margin-top: 15px;
+  border-radius: 3px;
+  padding: 15px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 14px;
+  position: relative;
+
+  }
+
+.game-notice-close {
+    position: absolute;
+    top: 3 !important; 
+    right: 3 !important;
+    color: white;
+}
+
 .game-explanation {
   margin-top: 50px; }
 
@@ -542,7 +563,9 @@ hr {
     padding: 0 20px; }
 
   h1.title {
-    font-size: 22px;
+    font-size: 40px;
+     line-height: 38px;
+     letter-spacing: 9px;
     margin-top: 15px; }
 
   .container {
@@ -550,7 +573,7 @@ hr {
     margin: 0 auto; }
 
   .score-container, .best-container {
-    margin-top: 0;
+    margin-top: 3px;
     padding: 15px 10px;
     min-width: 40px; }
 
@@ -571,7 +594,7 @@ hr {
     margin-top: 2px; }
 
   .game-container {
-    margin-top: 17px;
+    margin-top: 9px;
     position: relative;
     padding: 10px;
     cursor: default;
@@ -582,7 +605,7 @@ hr {
     -ms-user-select: none;
     -ms-touch-action: none;
     touch-action: none;
-    background: #627290;
+    background: #626d84;
     border-radius: 6px;
     width: 280px;
     height: 280px;
