@@ -90,7 +90,7 @@
     </div>
 
     <div class="game-notice" id="top">
-      <iframe width="100%" src="https://www.youtube-nocookie.com/embed/u4iDL3c0T1c?autoplay=1&controls=0&loop=1&playlist=u4iDL3c0T1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="playerID" width="100%" src="https://www.youtube-nocookie.com/embed/u4iDL3c0T1c?wmode=transparent&controls=0&loop=1&playlist=u4iDL3c0T1c" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
       <font style="font-size: 11px; line-height: 5px;">Don't forget to stream <a href="https://youtu.be/u4iDL3c0T1c" target="_blank">Fallin Flower</a> (link opens in a new tab/youtube app).</font>
     </div>
 
@@ -185,6 +185,9 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    var videoURL = $('#playerID').prop('src');
+    videoURL += "&autoplay=1";
+    $('#playerID').prop('src',videoURL);
     $(function() {
         $('body').sakura();
     });
