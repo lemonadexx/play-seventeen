@@ -25,6 +25,12 @@
 
     gtag('config', 'UA-163775753-1');
   </script>
+
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
   <div class="container">
@@ -44,9 +50,10 @@
       <a class="restart-button">New Game</a>
     </div>
 
-    <div class="game-notice">
-        Don't forget to stream <a href="https://youtu.be/u4iDL3c0T1c" target="_blank">Fallin Flower</a> (link opens in a new tab/youtube app).
-      </div>
+    <div class="game-notice" id="top">
+      <iframe width="100%" src="https://www.youtube-nocookie.com/embed/u4iDL3c0T1c?autoplay=1&controls=0&loop=1&playlist=u4iDL3c0T1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <font style="font-size: 11px; line-height: 5px;">Don't forget to stream <a href="https://youtu.be/u4iDL3c0T1c" target="_blank">Fallin Flower</a> (link opens in a new tab/youtube app).</font>
+    </div>
 
     <div class="game-container">
       <div class="game-message">
@@ -132,3 +139,6 @@
   <script src="js/application.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+</script>
