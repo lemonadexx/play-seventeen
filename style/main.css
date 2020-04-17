@@ -532,6 +532,19 @@ hr {
   text-align: center;
   float: right; }
 
+  .restart-button-clone {
+  display: inline-block;
+  background: #F6CAC9;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #627290;
+  height: 40px;
+  line-height: 42px;
+  display: block;
+  text-align: center;
+  float: right; }
+
 .game-notice {
   background: #DDB133;
   margin-top: 15px;
@@ -592,6 +605,42 @@ hr {
     display: block;
     box-sizing: border-box;
     margin-top: 2px; }
+
+  .black-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.50);
+    width: 100%;
+    height: 100%;
+    z-index: 17;
+    display: none;
+  }
+
+  .prompt {
+    position: fixed;
+    width: 50%;
+    top: 30%;
+    left: 20%;
+    background-color: #DDB133;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: 18;
+    display: none;
+  }
+
+  .prompt-button {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    display: inline-block;
+  }
 
   .game-container {
     margin-top: 9px;

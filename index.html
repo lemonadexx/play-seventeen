@@ -16,7 +16,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
   
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163775753-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,6 +25,7 @@
 
     gtag('config', 'UA-163775753-1');
   </script>
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
 
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -46,8 +47,8 @@
    right: 0;
    bottom: 0;
    pointer-events: none;
-   background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
-    opacity: 0.85;
+   background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png');
+    opacity: 0.80;
     animation: snow 20s linear infinite;
 }
 
@@ -86,7 +87,8 @@
     <div class="above-game">
       <p class="game-intro">Join the SEVENTEEN albums and get to the queen <strong>AN ODE</strong> album!</p>
       <br>
-      <a class="restart-button">New Game</a>
+      <a class="restart-button-clone">New Game</a>
+      <a class="restart-button" style="display: none;">New Game</a>
     </div>
 
     <div class="game-notice" id="top">
@@ -135,6 +137,16 @@
       </div>
     </div>
 
+    <div class="black-overlay" id="overlay-id"></div>
+    <div class="new_game prompt" id="prompt-id" style="color: white;">
+      <h3>START A NEW GAME?</h3> <br>
+      <div style="width: 30%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-yes" style="background-color:rgb(10,10,10);color: white">YES</button>
+      </div>
+      <div style="width: 65%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-no" style="background-color:#F6CAC9">KEEP PLAYING</button>
+      </div>
+    </div>
 
 
     <div class="game-notice" style="background-color: #F6CAC9;color: #627290;font-weight: 600">
@@ -191,5 +203,15 @@
     $(function() {
         $('body').sakura();
     });
+  });
+
+  $(".restart-button-clone").click(function() {
+    $(".black-overlay").show();
+    $(".new_game.prompt").show();    
+  });
+
+  $("#start-no").click(function(){
+    $(".black-overlay").hide();
+    $(".new_game.prompt").hide();    
   });
 </script>

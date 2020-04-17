@@ -15,6 +15,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 // Restart the game
 GameManager.prototype.restart = function () {
+  document.getElementById("prompt-id").style.display = "none";
+  document.getElementById("overlay-id").style.display = "none";
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
