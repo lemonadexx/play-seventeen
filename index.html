@@ -31,8 +31,47 @@
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous">
   </script>
+
+  <link rel="stylesheet" media="screen" href="assets/fallin-flower/css/jquery-sakura.min.css" />
 </head>
+<style type="text/css">
+
+.snow-bg {
+   content: '';
+   display: block;
+   position: fixed;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   pointer-events: none;
+   background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+    opacity: 0.7;
+    animation: snow 20s linear infinite;
+}
+
+@keyframes snow {
+ 0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+ 100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+@media (max-width: 768px) {
+    .woocommerce ul.products li.product, 
+    .woocommerce-page ul.products li.product, 
+    .woocommerce-page[class*=columns-] ul.products li.product,
+    .woocommerce[class*=columns-] ul.products li.product {
+        width: 100%;
+        float: left;
+        clear: both;
+        margin: 0 7em;
+    }
+}
+</style>
 <body>
+  <div class="snow-bg">
+  </div>
   <div class="container">
     <div class="heading">
       <h1 class="title">2048<br>SVT</h1>
@@ -96,7 +135,10 @@
       </div>
     </div>
 
-    <div class="game-notice" style="background-color: #F6CAC9;color: #627290;font-weight: 600">CARATS! I wanna see your tweets, please use #SVT2048 / #2048SVT :)</div>
+
+
+    <div class="game-notice" style="background-color: #F6CAC9;color: #627290;font-weight: 600">
+    CARATS! I wanna see your tweets, please use #SVT2048 / #2048SVT :)</div>
 
     <p class="game-explanation">
       <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two similar albums meet, they <strong>merge into a brand new album!</strong>
@@ -125,7 +167,7 @@
     <p>
     Created by : <strong>@lemonadecoups</strong> (twitter). A variant of <a href="https://github.com/gabrielecirulli/2048" target="_blank">gabrielecirulli's 2048</a>.
     </p>
-  </div>
+
 
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
@@ -137,8 +179,14 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
+  <script src="assets/fallin-flower/jquery-sakura.min.js"></script>
 </body>
 </html>
 
 <script type="text/javascript">
+  $(document).ready(function() {
+    $(function() {
+        $('body').sakura();
+    });
+  });
 </script>
