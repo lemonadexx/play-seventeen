@@ -15,6 +15,42 @@ body {
   display: block;
   clear: both; }
 
+  .black-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.50);
+    width: 100%;
+    height: 100%;
+    z-index: 17;
+    display: none;
+  }
+
+  .prompt {
+    position: fixed;
+    width: 50%;
+    top: 30%;
+    left: 20%;
+    background-color: #DDB133;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: 18;
+    display: none;
+  }
+
+  .prompt-button {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    display: inline-block;
+  }
+
 h1.title {
   font-size: 60px;
   line-height: 52px;
@@ -533,6 +569,7 @@ hr {
   float: right; }
 
   .restart-button-clone {
+    cursor: pointer;
   display: inline-block;
   background: #F6CAC9;
   border-radius: 3px;
