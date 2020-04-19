@@ -56,6 +56,7 @@ KeyboardInputManager.prototype.listen = function () {
   var retry = document.querySelector(".retry-button");
   retry.addEventListener("click", this.restart.bind(this));
   retry.addEventListener("touchend", this.restart.bind(this));
+  document.querySelector("#start-yes").addEventListener("click", this.restart.bind(this));
 
   var keepPlaying = document.querySelector(".keep-playing-button");
   keepPlaying.addEventListener("click", this.keepPlaying.bind(this));

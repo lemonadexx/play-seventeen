@@ -17,6 +17,8 @@ function GameManager(size, targetTile, tilesToAdd, InputManager, Actuator, Score
 
 // Restart the game
 GameManager.prototype.restart = function () {
+  document.getElementById("prompt-id").style.display = "none";
+  document.getElementById("overlay-id").style.display = "none";
   this.actuator.continue();
   this.setup();
 };
