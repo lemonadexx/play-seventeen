@@ -274,7 +274,8 @@ hr {
 .tile, .tile .tile-inner {
   width: 82px;
   height: 82px;
-  line-height: 92px; }
+  line-height: 92px; 
+  overflow:hidden;}
 .tile.tile-position-1-1 {
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
