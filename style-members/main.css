@@ -650,8 +650,10 @@ hr {
     display: inline-block;
   }
 
-  h1.title {
-    font-size: 27px;
+    h1.title {
+    font-size: 40px;
+     line-height: 38px;
+     letter-spacing: 9px;
     margin-top: 15px; }
 
   .container {
