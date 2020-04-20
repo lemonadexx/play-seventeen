@@ -1,9 +1,11 @@
-function GameManager(size, InputManager, Actuator, StorageManager, version) {
-  console.log("game manager: " + size);
+function GameManager(size, targetTile, tileSummonCNT, InputManager, Actuator, StorageManager, version) {
+  //console.log("game manager: " + size);
   this.version = version;
-  this.size           = size; // Size of the grid
+  this.targetTile = targetTile;
+  this.size = size; // Size of the grid
+  this.summonCNT = tileSummonCNT;
   this.inputManager   = new InputManager;
-  this.storageManager = new StorageManager;
+  this.storageManager = new StorageManager(version);
   this.actuator       = new Actuator;
 
   this.startTiles     = 2;
@@ -39,11 +41,11 @@ GameManager.prototype.isGameTerminated = function () {
 GameManager.prototype.setup = function () {
   var previousState = this.storageManager.getGameState();
 
-  console.log("gamemanager setup");
+  //console.log("gamemanager setup");
 
   // Reload the game from a previous game if present
   if (previousState && previousState.grid.size == this.size) {
-    console.log(previousState.grid.size + " " + this.size);
+    //console.log(previousState.grid.size + " " + this.size);
     this.grid        = new Grid(previousState.grid.size,
                                 previousState.grid.cells); // Reload grid
     this.score       = previousState.score;
@@ -51,7 +53,7 @@ GameManager.prototype.setup = function () {
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
   } else {
-    console.log("No previous state -- size: " + this.size);
+    //console.log("No previous state -- size: " + this.size);
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
@@ -80,6 +82,9 @@ GameManager.prototype.addRandomTile = function () {
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
+    return true;
+  } else {
+    return false;
   }
 };
 
@@ -175,7 +180,7 @@ GameManager.prototype.move = function (direction) {
           self.score += merged.value;
 
           // The mighty 2048 tile
-          if (merged.value === 2048) self.won = true;
+          if (merged.value === this.targetTile) self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
         }
@@ -187,8 +192,13 @@ GameManager.prototype.move = function (direction) {
     });
   });
 
+  //console.log("summonCNT: "+ this.summonCNT);
   if (moved) {
-    this.addRandomTile();
+    for (var i = 0; i < this.summonCNT; ++i) {
+      if (!this.addRandomTile()) {
+        break;
+      }
+    }
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!

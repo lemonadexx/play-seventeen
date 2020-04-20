@@ -1,5 +1,5 @@
 function Grid(size, previousState) {
-  console.log("GRID SIZE: " + size)
+  //console.log("GRID SIZE: " + size)
   this.size = size;
   this.cells = previousState ? this.fromState(previousState) : this.empty();
 }
