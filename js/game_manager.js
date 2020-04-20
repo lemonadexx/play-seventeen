@@ -181,8 +181,8 @@ GameManager.prototype.move = function (direction) {
           self.score += merged.value;
 
           // The mighty 2048 tile
-          console.log(merged.value  +" ? "+ this.targetTile);
-          if (merged.value == this.targetTile) {
+          console.log(merged.value  +" ? "+ self.targetTile);
+          if (merged.value === self.targetTile) {
             self.won = true;
             console.log("won!");
           }
