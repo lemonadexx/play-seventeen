@@ -1,8 +1,8 @@
 function GameManager(size, targetTile, tileSummonCNT, InputManager, Actuator, StorageManager, version) {
   //console.log("game manager: " + size);
   this.version = version;
-  console.log("targetTile : " + this.targetTile);
   this.targetTile = targetTile;
+  console.log("targetTile : " + this.targetTile);
   this.size = size; // Size of the grid
   this.summonCNT = tileSummonCNT;
   this.inputManager   = new InputManager;
