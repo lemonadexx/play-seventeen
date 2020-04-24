@@ -62,7 +62,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.innerHTML = "<img src=\"https://lemonadexx.github.io/play-seventeen/assets/tiles/"+tile.value+".jpg\" style=\"width:100%;\">";
+  inner.innerHTML = "<img src=\"assets/tiles/"+tile.value+".jpg\" style=\"width:100%;\">";
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
