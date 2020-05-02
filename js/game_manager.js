@@ -2,7 +2,7 @@ function GameManager(size, targetTile, tileSummonCNT, InputManager, Actuator, St
   //console.log("game manager: " + size);
   this.version = version;
   this.targetTile = targetTile;
-  console.log("targetTile : " + this.targetTile);
+  //console.log("targetTile : " + this.targetTile);
   this.size = size; // Size of the grid
   this.summonCNT = tileSummonCNT;
   this.inputManager   = new InputManager;
@@ -161,10 +161,13 @@ GameManager.prototype.move = function (direction) {
     traversals.y.forEach(function (y) {
       cell = { x: x, y: y };
       tile = self.grid.cellContent(cell);
-
+      console.log(tile);
       if (tile) {
         var positions = self.findFarthestPosition(cell, vector);
         var next      = self.grid.cellContent(positions.next);
+        console.log("postions: " + positions);
+        console.log("next: " + next);
+        console.log("----------------------");
 
         // Only one merger per row traversal?
         if (next && next.value === tile.value && !next.mergedFrom) {
@@ -181,10 +184,10 @@ GameManager.prototype.move = function (direction) {
           self.score += merged.value;
 
           // The mighty 2048 tile
-          console.log(merged.value  +" ? "+ self.targetTile);
+          //console.log(merged.value  +" ? "+ self.targetTile);
           if (merged.value === self.targetTile) {
             self.won = true;
-            console.log("won!");
+            //console.log("won!");
           }
         } else {
           self.moveTile(tile, positions.farthest);
