@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048 SEVENTEEN</title>
+
+  <link href="style-albums/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="description" content="Like the classic 2048 game, but make it SEVENTEEN members. Can you get to the queen An Ode?" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163775753-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163775753-1');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
+
+  <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<style type="text/css">
+
+.snow-bg {
+   content: '';
+   display: block;
+   position: fixed;
+   z-index: 5;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   pointer-events: none;
+   background-image: url('assets/fallin-flower/sakura-1-1.png'), url('assets/fallin-flower/sakura-2.png');
+    opacity: 0.50;
+    animation: snow 20s linear infinite;
+}
+
+@keyframes snow {
+ 0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+ 100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+@media (max-width: 768px) {
+    .woocommerce ul.products li.product, 
+    .woocommerce-page ul.products li.product, 
+    .woocommerce-page[class*=columns-] ul.products li.product,
+    .woocommerce[class*=columns-] ul.products li.product {
+        width: 100%;
+        float: left;
+        clear: both;
+        margin: 0 7em;
+    }
+}
+</style>
+<body>
+  <div class="snow-bg">
+  </div>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">2048<br>SVT</h1>
+      <div class="scores-container">
+        <div class="best-container">0</div>
+        <div style="width: 100%;height: 5px;"></div>
+        <div class="score-container">0</div>
+      </div>
+    </div>
+
+    <div style="width: 100%;height: 8px;"></div>
+
+    <div class="above-game">
+      <p class="game-intro">Join tiles to get from the <strong>17CARAT ALBUM</strong> to the one true masterpiece <strong>FALLIN FLOWER ALBUM</strong>!</p>
+      <br>
+      <div class="restart-button-clone">New Game</div>
+      <a class="restart-button" style="display: none;">New Game</a>
+    </div>
+
+    <div style="width: 100%;height: 60px;"></div>
+    <div class="game-notice" id="top">
+      <iframe id="playerID" width="100%" src="https://www.youtube-nocookie.com/embed/u4iDL3c0T1c?wmode=transparent&controls=0&loop=1&playlist=u4iDL3c0T1c" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+      <font style="font-size: 11px; line-height: 5px;">Don't forget to stream <a href="https://youtu.be/u4iDL3c0T1c" target="_blank">Fallin Flower</a> (link opens in a new tab/youtube app).</font>
+    </div>
+
+    <div style="width: 100%;height: 30px;"></div>
+
+    <div>
+      <div style="float: right;display: inline-block;font-size: 11px;">
+        MODE |&nbsp;
+        <a href="index.html" style="color: #f6cac9;text-decoration: none;">ALBUMS</a>&nbsp;
+        <a href="members.html" style="color: #f6cac9;text-decoration: none;">MEMBERS</a>&nbsp;
+        <a href="" style="color: #131212;background-color: #f6cac9;text-decoration: none;padding: 10px;border-radius: 3px;">ALBUMS++</a>&nbsp;
+    </div>
+
+    <div style="width: 100%;height: 25px;"></div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <div class="black-overlay" id="overlay-id"></div>
+    <div class="new_game prompt" id="prompt-id" style="color: white;display: none;">
+      <h3>START A NEW GAME?</h3> <br>
+      <div style="width: 30%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-yes" style="background-color:rgb(10,10,10);color: white">YES</button>
+      </div>
+      <div style="width: 65%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-no" style="background-color:#e4b0af">KEEP PLAYING</button>
+      </div>
+    </div>
+
+
+    <!-- <div class="game-notice" style="background-color: #627290;color: #e4b0af;font-weight: 600">
+    CARATS! I wanna see your tweets, please use #SVT2048 / #2048SVT and don't forget to tag @pledis_17 :)</div> -->
+
+     <div style="float: right; display: inline-block;font-size: 12px;letter-spacing: 1px;font-weight: 650;padding-top: 7px;">
+         #SVT2048 | #2048SVT
+    </div>
+    <!-- <div style="float: left; display: inline-block;font-size: 12px;letter-spacing: 1px;font-weight: 650;padding-top: 7px;">
+         PLEASE ANSWER POLL BELOW
+    </div> -->
+
+    <div style="width: 100%; height: 25px;"></div>
+
+    <!--   <span style="width: 100%;background-color: #627290;color: #e4b0af;font-size: 12px;padding: 8px; padding-left: 22px;padding-right: 22px;">please answer poll below:</span>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">carats do u know how to play solitaire?</p>&mdash; LANA (@lemonadecoups) <a href="https://twitter.com/lemonadecoups/status/1252882890951548928?ref_src=twsrc%5Etfw">April 22, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two similar albums meet, they <strong>merge into a brand new album!</strong>
+    </p>
+    <hr>
+    <p>
+    <strong class="important">SEVENTEEN ALBUMS: </strong> 17 CARAT | BOYS BE | LOVE & LETTER | LOVE & LETTER REPACKAGED | GOING SEVENTEEN | AL1 | TEEN,AGE | DIRECTOR'S CUT | WE MAKE YOU | YOU MAKE MY DAY | YOU MADE MY DAWN | HAPPY ENDING | HIT DIGITAL SINGLE | AN ODE | FALLIN FLOWER
+    <div style="width: 100%; height: 7px"></div>
+    <center>
+      <img src="assets/albums/2.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/4.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/8.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/16.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/32.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/64.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/128.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/256.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/512.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/1024.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/2048.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/4096.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/8192.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/16384.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/32768.jpg" style="width: 15px">&nbsp;
+    </center>
+    <div style="width: 100%; height: 7px"></div>
+    </p>
+    <hr>
+    <p>
+    Created by : <strong>@lemonadecoups</strong> (twitter). A variant of <a href="https://github.com/gabrielecirulli/2048" target="_blank">gabrielecirulli's 2048</a>.
+    </p>
+
+
+  <!-- <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator_albums.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager-open.js"></script>
+  <script src="js/application-albums.js"></script> -->
+</body>
+</html>
+
+<script type="text/javascript">
+  $(".restart-button-clone").click(function() {
+    $(".black-overlay").show();
+    $(".new_game.prompt").show();    
+  });
+
+  $("#start-no").click(function(){
+    $(".black-overlay").hide();
+    $(".new_game.prompt").hide();    
+  });
+</script>
