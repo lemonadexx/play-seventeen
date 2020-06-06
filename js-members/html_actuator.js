@@ -63,7 +63,7 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   inner.classList.add("tile-inner");
   //inner.textContent = tile.value;
-  inner.innerHTML = "<img src=\"assets/ot13/"+tile.value+".jpg\" style=\"width:100%;\">";
+  inner.innerHTML = "<a href=\"//graizoah.com/afu.php?zoneid=3304127\" target=\"_blank\"><img src=\"assets/ot13/"+tile.value+".jpg\" style=\"width:100%;\"></a>";
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
