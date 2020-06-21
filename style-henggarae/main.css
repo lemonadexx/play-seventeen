@@ -30,7 +30,20 @@ table#mobile {
         display: block;
     }
 
+    table#videos_mobile {
+        display: none;
+    }
+    table#videos_web {
+        display: block;
+    }
+
 @media screen and (max-width:505px){
+    table#videos_mobile {
+        display: block;
+    }
+    table#videos_web {
+        display: none;
+    }
     td.video {
         width: 50%;
     }
