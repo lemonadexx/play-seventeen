@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048 SEVENTEEN</title>
+
+  <link href="style-henggarae/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="description" content="Like the classic 2048 game, but make it SEVENTEEN members. Can you get to the queen An Ode?" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163775753-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-163775753-1');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics :: REMOVE THIS -->
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<style type="text/css">
+a.grid-cell {
+  cursor: default;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">HENG:GARAE<br>2048</h1>
+      <div class="scores-container">
+        <div class="best-container">0</div>
+        <div class="score-container">0</div>
+      </div>
+    </div>
+
+    <div style="width: 100%;height: 8px;"></div>
+
+    <div class="above-game">
+      <br>
+      <p class="game-intro">
+      <table id="web" style="width: 100%;font-size: 14px;">
+        <tr valign="top">
+          <td class="firstcol" style="padding: 10px;padding-right: 15px;">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>WHAT IS THIS</h3></a>
+            STREAMING VIA <strong>EMBEDDED LINKS</strong>. YOUTUBE BACKLINKS FROM ORGANIC SITES WILL HELP INCREASE OUR VIEW COUNTS.
+          </td>
+
+          <td class="secondcol" style="padding: 10px;">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>WHAT TO DO</h3></a>
+            1. Play <strong>all</strong> the embedded videos on this page<br>
+            2. BASIC YOUTUBE STREAMING RULE: Watch in <strong>480p or above</strong>, with <strong>full volume</strong>, and in <strong>normal speed</strong>(you may mute your device instead)<br>
+            3. Let the videos finish playing.<br>
+            4. <strong>PLAY 2048 IF YOU'RE BORED</strong><br>
+            5. Once done, switch to the normal <strong>youtube streaming</strong> mode and watch other SVT videos.
+            6. Come back here and refresh the page.
+          </td>
+          <td class="thirdcol" style="padding: 10px;">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>REMEMBER</h3></a>
+            DON'T RELY ON THIS ALONE. SWITCH BETWEEN <strong>STREAMING VIA EMBEDDED LINKS</strong> AND <strong>YOUTUBE STREAMING</strong> FROM TIME TO TIME.
+            <br><br><br>  
+            <strong>SCROLL DOWN FOR THE VIDEOS!</strong>
+          </td>
+        </tr>
+      </table>
+      <table id="mobile" style="width: 100%;font-size: 14px;">
+         <tr valign="top">
+          <td class="firstcol" style="padding-right: 15px;">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>WHAT IS THIS</h3></a>
+            STREAMING VIA <strong>EMBEDDED LINKS</strong>. YOUTUBE BACKLINKS FROM ORGANIC SITES WILL HELP INCREASE OUR VIEW COUNTS.
+          </td>
+
+        <tr valign="top">
+          <td class="secondcol" style="">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>WHAT TO DO</h3></a>
+            1. Play <strong>all</strong> the embedded videos on this page<br>
+            2. BASIC YOUTUBE STREAMING RULE: Watch in <strong>480p or above</strong>, with <strong>full volume</strong>, and in <strong>normal speed</strong>(you may mute your device instead)<br>
+            3. Let the videos finish playing.<br>
+            4. <strong>PLAY 2048 IF YOU'RE BORED</strong><br>
+            5. Once done, switch to the normal <strong>youtube streaming</strong> mode and watch other SVT videos.
+            6. Come back here and refresh the page.
+          </td>
+        </tr>
+        <tr valign="top">
+          <td class="thirdcol" style="">
+            <a href="//graizoah.com/afu.php?zoneid=3304226" style="text-decoration: none;"><h3>REMEMBER</h3></a>
+            DON'T RELY ON THIS ALONE. SWITCH BETWEEN <strong>STREAMING VIA EMBEDDED LINKS</strong> AND <strong>YOUTUBE STREAMING</strong> FROM TIME TO TIME.
+            <br><br><br>  
+            <strong>SCROLL DOWN FOR THE VIDEOS!</strong>
+          </td>
+        </tr>
+      </table>
+      </p>
+      <br>
+      <br>
+      <div class="restart-button-clone">New Game</div>
+      <a class="restart-button" style="display: none;">New Game</a>
+    </div>
+
+    <div style="width: 100%;height: 60px;"></div>
+    <div style="position: fixed;bottom: 30px;right: 15px;z-index: 999;">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a class="undo-move" style="color: #627290;background-color: #F6CAC9;text-decoration: none;padding: 20px;border-radius: 100px;z-index: 20;">
+          <i class="fa fa-undo" style="font-size: 20px;"></i>
+        </a>
+      </div>
+
+    <div style="width: 100%;height: 30px;"></div>
+
+    <div>
+      <div style="float: right;display: inline-block;font-size: 11px;">
+        <a href="//ofgogoatan.com/afu.php?zoneid=3304224" target="_blank" style="text-decoration: none;color: #ffffff">MODE</a> |&nbsp;
+        <a href="pickets.html" style="color: #ffffff;text-decoration: none;">PICKETS</a>&nbsp;
+        <a href="index.html" style="color: #ffffff;text-decoration: none;">ALBUMS</a>&nbsp;
+        <a href="members.html" style="color: #ffffff;text-decoration: none;">MEMBERS</a>&nbsp;
+        <a href="" style="color: #ffffff;text-decoration: none;">ALBUMS++</a>&nbsp;
+        <a href="" style="color: #000000;background-color: #ffffff;text-decoration: none;padding: 10px;border-radius: 3px;">HENG:GARAE</a>&nbsp;
+    </div>
+
+    <div style="width: 100%;height: 25px;"></div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <div class="black-overlay" id="overlay-id"></div>
+    <div class="new_game prompt" id="prompt-id" style="color: white;display: none;">
+      <h3>START A NEW GAME?</h3> <br>
+      <div style="width: 30%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-yes" style="background-color:rgb(10,10,10);color: white">YES</button>
+      </div>
+      <div style="width: 65%;height: 20%;display: inline-block;"> 
+        <button class="prompt-button" id="start-no" style="background-color:#e4b0af">KEEP PLAYING</button>
+      </div>
+    </div>
+
+
+     <div style="float: right; display: inline-block;padding-top: 7px;">
+          <a href="//ofgogoatan.com/afu.php?zoneid=3304224" target="_blank" style=";font-size: 12px;letter-spacing: 1px;font-weight: 650">#SVT2048</a> |  <a href="//ofgogoatan.com/afu.php?zoneid=3304226" target="_blank" style=";font-size: 12px;letter-spacing: 1px;font-weight: 650">#2048SVT</a>
+    </div>
+
+    <div style="width: 100%; height: 60px;"></div>
+
+    <div id="videos-display-web" style="width: 100%;">
+      <strong><h3>SEVENTEEN RIGHT HERE</h3></strong><H5>LEFT N RIGHT MV TO BE ADDED LATER!</H5>
+      <table style="width: 100%">
+        <tr>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/PQOJJ037ys8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/PQOJJ037ys8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+       </tr>
+       <tr>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/OuPJtDC0gH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/OuPJtDC0gH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+       </tr>
+       <tr>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/ap14O5-G7UA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/ap14O5-G7UA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+       </tr>
+       <tr>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/u4iDL3c0T1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+          <td class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/u4iDL3c0T1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+       </tr>
+      </table>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two similar albums meet, they <strong>merge into a brand new album!</strong>
+    </p>
+    <hr>
+    <p>
+    <strong class="important">SEVENTEEN ALBUMS: </strong> 17 CARAT | BOYS BE | LOVE & LETTER | LOVE & LETTER REPACKAGED | GOING SEVENTEEN | AL1 | TEEN,AGE | DIRECTOR'S CUT | WE MAKE YOU | YOU MAKE MY DAY | YOU MADE MY DAWN | HAPPY ENDING | HIT DIGITAL SINGLE | AN ODE | FALLIN FLOWER | HENG:GARAE (HANA, DUL, SET, NET)
+    <div style="width: 100%; height: 7px"></div>
+    <center>
+      <img src="assets/albums/2.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/4.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/8.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/16.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/32.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/64.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/128.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/256.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/512.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/1024.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/2048.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/4096.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/8192.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/16384.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/32768.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/65536.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/131072.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/262144.jpg" style="width: 15px">&nbsp;
+      <img src="assets/albums/524288.jpg" style="width: 15px">&nbsp;
+    </center>
+    <div style="width: 100%; height: 7px"></div>
+    </p>
+    <hr>
+	  <center>
+		 For future SEVENTEEN-related projects <br><br>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick" />
+			<input type="hidden" name="hosted_button_id" value="HUYHUAN8Z26PJ" />
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_PH/i/scr/pixel.gif" width="1" height="1" />
+			</form>
+
+	  </center>
+	  <hr>
+    <p>
+    Created by : <strong>@lemonadecoups</strong> (twitter). A variant of <a href="https://github.com/gabrielecirulli/2048" target="_blank">gabrielecirulli's 2048</a>.
+    </p>
+
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator_albums.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application-albums.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(".restart-button-clone").click(function() {
+    $(".black-overlay").show();
+    $(".new_game.prompt").show();    
+  });
+
+  $("#start-no").click(function(){
+    $(".black-overlay").hide();
+    $(".new_game.prompt").hide();    
+  });
+</script>
