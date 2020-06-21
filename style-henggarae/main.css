@@ -15,7 +15,8 @@ body{
 }
 
 strong {
-    color: rgb(181,180,132);
+    color: rgb(116,115,69);
+    font-weight: 1000;
 }
 
 td.video {
