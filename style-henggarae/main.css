@@ -11,16 +11,17 @@ body{
     background-image: url(../assets/317f8325bd56ef76549a6f7e84bd16d456f8be85.jpg);
     background-repeat: no-repeat;
     background-position: center top;
-    padding: 300px;
+    padding: 200px;
+    padding-top: 300px;
 }
 
 strong {
-    color: rgb(79, 78, 67);
+    color: rgb(66, 55, 140);
     font-weight: 1000;
 }
 
 td.video {
-    width: 50%;
+    width: 25%;
 }
 table#mobile {
         display: none;
@@ -208,7 +209,7 @@ hr{
     margin-bottom:30px
 }
 .container{
-    width:800px;
+    width:900px;
     margin:0 auto
 }
 @-webkit-keyframes fade-in{
@@ -238,7 +239,7 @@ hr{
 .game-container{
     margin-top:15px;
     padding: 20px;
-    padding-left: 150px;
+    padding-left: 200px;
     position:relative;
     cursor:default;
     -webkit-touch-callout:none;
@@ -246,7 +247,7 @@ hr{
     -moz-user-select:none;
     border-radius:6px;
     background-color: #db841d;
-    width:800px;
+    width:900px;
     height:520px;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -755,7 +756,7 @@ td.thirdcol {
     
 @media screen and (max-width:505px){
     strong {
-    color: rgb(79, 78, 67);
+    color: rgb(66, 55, 140);
     font-weight: 1000;
 }
 
