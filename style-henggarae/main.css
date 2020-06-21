@@ -15,7 +15,7 @@ body{
 }
 
 strong {
-    color: rgb(116,115,69);
+    color: rgb(79, 78, 67);
     font-weight: 1000;
 }
 
@@ -754,6 +754,11 @@ td.thirdcol {
     }
     
 @media screen and (max-width:505px){
+    strong {
+    color: rgb(79, 78, 67);
+    font-weight: 1000;
+}
+
 
     table#web {
         display: none;
