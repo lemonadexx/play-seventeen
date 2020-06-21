@@ -14,6 +14,10 @@ body{
     padding: 300px;
 }
 
+strong {
+    color: rgb(181,180,132);
+}
+
 td.video {
     width: 50%;
 }
