@@ -14,6 +14,7 @@ function GameManager(size, targetTile, tileSummonCNT, InputManager, Actuator, St
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+  this.inputManager.on("undo", this.undo.bind(this));
 
   this.setup();
 }
@@ -24,6 +25,13 @@ GameManager.prototype.restart = function () {
   document.getElementById("overlay-id").style.display = "none";
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
+  this.setup();
+};
+
+// UNDO: move a step backwards
+GameManager.prototype.undo = function () {
+  this.storageManager.getPrevious();
+  this.actuator.continueGame(); 
   this.setup();
 };
 
@@ -161,13 +169,13 @@ GameManager.prototype.move = function (direction) {
     traversals.y.forEach(function (y) {
       cell = { x: x, y: y };
       tile = self.grid.cellContent(cell);
-      console.log(tile);
+      //console.log(tile);
       if (tile) {
         var positions = self.findFarthestPosition(cell, vector);
         var next      = self.grid.cellContent(positions.next);
-        console.log("postions: " + positions);
-        console.log("next: " + next);
-        console.log("----------------------");
+        //console.log("postions: " + positions);
+        //console.log("next: " + next);
+        //console.log("----------------------");
 
         // Only one merger per row traversal?
         if (next && next.value === tile.value && !next.mergedFrom) {

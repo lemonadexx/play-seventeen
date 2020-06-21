@@ -1,0 +1,1 @@
+window.requestAnimationFrame(function(){new GameManager(6,32768,4,KeyboardInputManager,HTMLActuator,LocalStorageManager,"albumsfull")});
