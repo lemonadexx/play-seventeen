@@ -37,7 +37,14 @@ table#mobile {
         display: block;
     }
 
+    iframe {
+        width: 49%;
+    }
+
 @media screen and (max-width:505px){
+     iframe {
+        width: 100%;
+    }
     table#videos_mobile {
         display: block;
     }
@@ -45,7 +52,7 @@ table#mobile {
         display: none;
     }
     td.video {
-        width: 100%;
+        width: 50%;
     }
 }
 
