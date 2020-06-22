@@ -45,7 +45,7 @@ table#mobile {
         display: none;
     }
     td.video {
-        width: 50%;
+        width: 100%;
     }
 }
 
