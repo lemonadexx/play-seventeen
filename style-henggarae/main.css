@@ -43,7 +43,7 @@ table#mobile {
 
 @media screen and (max-width:505px){
      iframe {
-        width: 100%;
+        width: 49%;
     }
     table#videos_mobile {
         display: block;
