@@ -41,8 +41,9 @@ table#mobile {
         width: 24%;
     }
 
-    iframe.mv {
+    iframe.mv_video {
         width: 49%;
+    }
 
 @media screen and (max-width:505px){
      iframe {
